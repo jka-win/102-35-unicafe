@@ -29,18 +29,18 @@ const Statistics = props => {
   const total = props.good + props.neutral + props.bad;
 
   return (
-    <div>
-        <StatisticLine text="good" value={props.good} />
-        <StatisticLine text="neutral" value={props.neutral} />      
-        <StatisticLine text="bad" value={props.bad} />
-        <StatisticLine text="all" value={total} />
-        <StatisticLine text="average" value={(props.good - props.bad) / total} />
-        <StatisticLine text="positive" value={props.good / total * 100 + " %"} />
-    </div>
+    <table>
+      <StatisticLine text="good" value={props.good} />
+      <StatisticLine text="neutral" value={props.neutral} />      
+      <StatisticLine text="bad" value={props.bad} />
+      <StatisticLine text="all" value={total} />
+      <StatisticLine text="average" value={(props.good - props.bad) / total} />
+      <StatisticLine text="positive" value={props.good / total * 100 + " %"} />
+    </table>
   );
 };
 
 const StatisticLine = props =>
-  <p>{props.text} {props.value}</p>;
+  <tr><td>{props.text}</td><td>{props.value}</td></tr>;
 
 export default App;
